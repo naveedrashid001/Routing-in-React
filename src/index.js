@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import "./css/style.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { store } from './store/store';
+import { Provider } from 'react-redux';
 
 import Header from './Layout/header';
 import Home from './Home';
@@ -16,6 +18,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <div style={{ backgroundColor: "black", color: "gray" }}>
+    <Provider store={store}>
     <BrowserRouter>
       <Header />
       <Routes>
@@ -37,9 +40,8 @@ root.render(
         <Route path='*' element={<NotFound />} />  
 
       </Routes>
-      
-        
-      
     </BrowserRouter>
+
+    </Provider>
   </div>
 );
