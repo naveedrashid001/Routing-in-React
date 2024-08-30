@@ -1,18 +1,19 @@
 import ReactDOM from 'react-dom/client';
 import "./css/style.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { store } from './store/store';
+import { store } from './redux/store';
 import { Provider } from 'react-redux';
 
 import Header from './Layout/header';
-import Home from './Home';
-import About from './About';
-import Crypto from './Crypto';
-import NotFound from './NotFound';
+import Home from './Layout/Home';
+import About from './Layout/About';
+import Crypto from './Layout/Crypto';
+import NotFound from './Layout/NotFound';
 import Product from './pages/Product';
 import CreateProduct from './pages/CreateProduct';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
+import Counter from './components/Counter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -40,8 +41,12 @@ root.render(
         <Route path='*' element={<NotFound />} />  
 
       </Routes>
+      <Counter />
     </BrowserRouter>
 
     </Provider>
+
+    
+
   </div>
 );
