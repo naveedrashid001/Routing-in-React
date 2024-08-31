@@ -14,6 +14,9 @@ import CreateProduct from './pages/CreateProduct';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
 import Counter from './components/Counter';
+import DestinationList from './components/destinationList';
+import DestinationFact from './components/DestinationFact';
+import ResetApp from './components/ResetApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -22,6 +25,7 @@ root.render(
     <Provider store={store}>
     <BrowserRouter>
       <Header />
+      
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
@@ -41,7 +45,14 @@ root.render(
         <Route path='*' element={<NotFound />} />  
 
       </Routes>
+      <ResetApp />
       <Counter />
+      <div className='p-4 border text-center'>
+        <h4 className='text-success'> Destination List</h4>
+        <DestinationList />
+      </div>
+      <DestinationFact />
+      
     </BrowserRouter>
 
     </Provider>
